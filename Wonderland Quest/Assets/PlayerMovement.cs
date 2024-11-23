@@ -21,7 +21,17 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Horizontal movement
-        body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.linearVelocity.y);
+        float horizontalInput = Input.GetAxis("Horizontal");
+        body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
+        //Flipping the character
+        if (horizontalInput > 0.01f)
+        {
+            transform.localScale = Vector3.one;
+        }
+        else if (horizontalInput < -0.01f)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
 
         // Jump logic
         if (Input.GetKeyDown(KeyCode.UpArrow))
