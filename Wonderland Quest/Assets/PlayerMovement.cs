@@ -11,8 +11,11 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded; // To check if the player is on the ground
     private int jumpCount;   // To track the number of jumps
 
+    public Animator Anim;
+
     void Start()
     {
+        Anim = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
         isGrounded = true;
         jumpCount = 0;
@@ -23,6 +26,17 @@ public class PlayerMovement : MonoBehaviour
         // Horizontal movement
         float horizontalInput = Input.GetAxis("Horizontal");
         body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
+
+        //Idle and Running animation
+        if (horizontalInput == 0)
+        {
+            Anim.SetBool("isRunning", false);
+        }
+        else
+        {
+            Anim.SetBool("isRunning", true);
+        }
+
         //Flipping the character
         if (horizontalInput > 0.01f)
         {
