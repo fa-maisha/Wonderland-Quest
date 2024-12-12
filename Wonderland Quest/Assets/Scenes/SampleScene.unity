@@ -409,7 +409,7 @@ SpriteRenderer:
   m_Size: {x: 1.41, y: 0.65}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &820084464
@@ -496,7 +496,7 @@ SpriteRenderer:
   m_Size: {x: 1.41, y: 0.65}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &849615609
@@ -646,9 +646,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpForce: 15
-  body: {fileID: 0}
-  Anim: {fileID: 0}
+  body: {fileID: 914267875}
+  jumpForce: 5
+  groundCheck: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!70 &914267880
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
