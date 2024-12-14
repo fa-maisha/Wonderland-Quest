@@ -25,6 +25,10 @@ public class Health : MonoBehaviour
             // Pleayer dead
         }
     }
+    public void GetLife(float life)
+    {
+        currentHealth = Mathf.Clamp(currentHealth +life, 0, startingHealth);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Obstacle"))
@@ -32,7 +36,12 @@ public class Health : MonoBehaviour
             TakeDamage(1);
 
         }
+        if(collision.CompareTag("life"))
+        {
+            GetLife(1);
+        }
     }
+
     // Update is called once per frame
     void Update()
     {
