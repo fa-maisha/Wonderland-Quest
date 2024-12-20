@@ -5,24 +5,37 @@ public class Health : MonoBehaviour
 
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
+    private Animator anim;
+    private bool dead;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         currentHealth = startingHealth;
+        anim = GetComponent<Animator>();
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
 
-        if (currentHealth < 0)
+        if (currentHealth > 0)
         {
             // Player hurt
+            anim.SetTrigger("hurt");
+            //iframes
         }
         else
         {
             // Pleayer dead
+            if (!dead)
+            {
+                anim.SetTrigger("die");
+                GetComponent<PlayerMovement>().enabled = false;
+                dead = true;
+            }
+           
+
         }
     }
     public void GetLife(float life)

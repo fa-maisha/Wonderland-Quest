@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     
-    [SerializeField] public float speed;
+    [SerializeField] private float speed;
     public Rigidbody2D body;
-    public Animator anim;
+    private Animator anim;
+    private float horizontalInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +17,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxis("Horizontal");
         body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
         if (horizontalInput > 0.01f)
         {
@@ -35,5 +37,11 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("running", horizontalInput != 0);
 
     }
+    public bool canAttack()
+    {
+        //return horizontalInput == 0;
+        return true;
+    }
+    
 }
 
