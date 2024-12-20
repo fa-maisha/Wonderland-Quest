@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    [SerializeField] public float speed;
+    
+    [SerializeField] private float speed;
     public Rigidbody2D body;
+    private Animator anim;
+    private float horizontalInput;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
+
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxis("Horizontal");
         body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
         if (horizontalInput > 0.01f)
         {
@@ -30,7 +34,14 @@ public class PlayerMovement : MonoBehaviour
         {
             body.linearVelocity = new Vector2(body.linearVelocity.x, speed);
         }
+        anim.SetBool("running", horizontalInput != 0);
 
     }
+    public bool canAttack()
+    {
+        //return horizontalInput == 0;
+        return true;
+    }
+    
 }
 
