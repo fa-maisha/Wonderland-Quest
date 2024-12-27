@@ -648,7 +648,7 @@ GameObject:
   - component: {fileID: 336764993}
   - component: {fileID: 336764996}
   - component: {fileID: 336764995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1509,7 +1509,7 @@ GameObject:
   - component: {fileID: 602163067}
   - component: {fileID: 602163066}
   - component: {fileID: 602163068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IceCave
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3200,6 +3200,7 @@ GameObject:
   - component: {fileID: 1114602524}
   - component: {fileID: 1114602526}
   - component: {fileID: 1114602527}
+  - component: {fileID: 1114602528}
   - component: {fileID: 1114602525}
   m_Layer: 3
   m_Name: Player
@@ -3223,6 +3224,7 @@ Transform:
   m_Children:
   - {fileID: 1068594987}
   - {fileID: 718950798}
+  - {fileID: 1200501764}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1114602520
@@ -3265,7 +3267,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpHeight: 15
   body: {fileID: 0}
 --- !u!114 &1114602523
 MonoBehaviour:
@@ -3352,6 +3353,25 @@ MonoBehaviour:
   - {fileID: 633989357}
   - {fileID: 1246314756}
   - {fileID: 2087307061}
+--- !u!114 &1114602528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114602517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f208d6ae79ede47aebc2a1d5447df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rgbody: {fileID: 0}
+  jumpPower: 13
+  fallMultiplier: 3
+  groundCheck: {fileID: 1200501764}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1115649759
 GameObject:
   m_ObjectHideFlags: 0
@@ -3669,6 +3689,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 323238108}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1200501763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1200501764}
+  m_Layer: 3
+  m_Name: groundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1200501764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200501763}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.034, y: -0.991, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1114602519}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1238546326
 GameObject:
@@ -4869,7 +4920,7 @@ GameObject:
   - component: {fileID: 1694575849}
   - component: {fileID: 1694575848}
   - component: {fileID: 1694575847}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -12421,7 +12472,7 @@ GameObject:
   - component: {fileID: 2123972630}
   - component: {fileID: 2123972629}
   - component: {fileID: 2123972631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IcePlate
   m_TagString: Ground
   m_Icon: {fileID: 0}
