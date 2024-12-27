@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 336764995}
   m_Layer: 0
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1511,7 +1511,7 @@ GameObject:
   - component: {fileID: 602163068}
   m_Layer: 0
   m_Name: IceCave
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3265,6 +3265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jumpHeight: 15
   body: {fileID: 0}
 --- !u!114 &1114602523
 MonoBehaviour:
@@ -4870,7 +4871,7 @@ GameObject:
   - component: {fileID: 1694575847}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12422,7 +12423,7 @@ GameObject:
   - component: {fileID: 2123972631}
   m_Layer: 0
   m_Name: IcePlate
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
