@@ -6,9 +6,13 @@ public class PlayerMovement : MonoBehaviour
 {
     
     [SerializeField] private float speed;
+    //[SerializeField] private float jumpHeight;
     public Rigidbody2D body;
     private Animator anim;
     private float horizontalInput;
+    private bool grounded;
+
+    bool doubleJump;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +34,38 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        /*if (Input.GetKey(KeyCode.UpArrow))//jump
         {
-            body.linearVelocity = new Vector2(body.linearVelocity.x, speed);
-        }
+            if(grounded)
+            {
+                Jump();
+                doubleJump = true;
+            }
+            else if(doubleJump)
+            {
+                Jump();
+                doubleJump = false;
+            }
+
+            
+        }*/
         anim.SetBool("running", horizontalInput != 0);
+        anim.SetBool("grounded", grounded);
 
     }
+   /* private void Jump()
+    {
+        body.linearVelocity = new Vector2(body.linearVelocity.x, jumpHeight);
+        anim.SetTrigger("jump");
+        grounded = false;
+    }*/
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            grounded = true;
+        }
+    }*/
     public bool canAttack()
     {
         //return horizontalInput == 0;
